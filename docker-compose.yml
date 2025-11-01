@@ -1,0 +1,15 @@
+services:
+  backend:
+      image: backend:0.1 #Como se llama la imagen y su número de versión
+      build: # le decimos que a esa imagen la vamos a construir con la info que está en la carpeta config/django-image
+        context: ./config/django-image
+      volumes:
+          - ./src/django:/usr/src/app
+      ports:
+          - "8000:8000"
+      networks:
+        red:
+
+networks:
+  red:
+          
